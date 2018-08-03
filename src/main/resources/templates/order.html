@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet">
+
+</head>
+<body>
+	<div class="container">
+		<form action="/tracking/manager/save" method="post" accept-charset="UTF-8">
+			<h2 class="form-signin-heading">请录入订单信息</h2>
+			<input type="text" class="form-control" placeholder="淘宝订单号"
+				name="tbnumber" /> <input type="text" class="form-control"
+				placeholder="物流状态" name="status" /> <input type="text"
+				class="form-control" placeholder="数据更新时间" name="updatetime" />
+			<button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+		</form>
+	</div>
+	<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<!-- 包括所有已编译的插件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>
