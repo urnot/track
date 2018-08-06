@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html mlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head >
 <meta charset="UTF-8">
 <title>首页</title>
+<link
+	href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css"
+	rel="stylesheet">
+<link th:href="@{/css/index.css}" rel="stylesheet">
 </head>
 <body>
 	<div class="container">
-		<form class="form-signin" action="/tracking/manager/check"
+		<form class="form-signin" th:action="@{/manager/check}"
 			method="post">
 			<h2 class="form-signin-heading">请 登 录</h2>
 			<input type="text" class="form-control" placeholder="账号" name="user" />
@@ -15,5 +20,15 @@
 			<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
 		</form>
 	</div>
+		<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+	<script
+		src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+
+	<script th:src="@{/js/order.js}"></script>
+	<!-- 包括所有已编译的插件 -->
+	<script
+		src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script
+		src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
 </body>
 </html>

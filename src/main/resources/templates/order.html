@@ -1,27 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html mlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet">
-
+<link th:htrf="@{/css/order.css}" rel="stylesheet">
+<link
+	href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
+	rel="stylesheet">
 </head>
 <body>
 	<div class="container">
-		<form action="/tracking/manager/save" method="post" accept-charset="UTF-8">
+		<form th:action="@{/smanager/save}" method="post"
+			accept-charset="UTF-8">
 			<h2 class="form-signin-heading">请录入订单信息</h2>
 			<input type="text" class="form-control" placeholder="淘宝订单号"
 				name="tbnumber" /> <input type="text" class="form-control"
-				placeholder="物流状态" name="status" /> <input type="text"
-				class="form-control" placeholder="数据更新时间" name="updatetime" />
+				placeholder="物流状态" name="status" />
+			<div class="form-group">
+				<label for="">选择日期 到时间：</label>
+				<div class="input-group date">
+					<input type="text" id='date1' class="form-control"> <span
+						class="input-group-addon"> <i
+						class="glyphicon glyphicon-calendar"></i>
+					</span>
+				</div>
+			</div>
+
+
 			<button class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
 		</form>
 	</div>
 	<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<!-- 包括所有已编译的插件 -->
-	<script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+		<script th:src="@{/js/order2.js}"></script>
+	<script
+		src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<link
+		href="https://cdn.bootcss.com/smalot-bootstrap-datetimepicker/2.4.4/css/bootstrap-datetimepicker.min.css"
+		rel="stylesheet">
+	<script
+		src="https://cdn.bootcss.com/smalot-bootstrap-datetimepicker/2.4.4/js/bootstrap-datetimepicker.min.js"></script>
+	<script
+		src="https://cdn.bootcss.com/smalot-bootstrap-datetimepicker/2.3.1/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
 </body>
 </html>

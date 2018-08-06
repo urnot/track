@@ -15,7 +15,7 @@ import com.sevenstudio.track.dao.UserRepository;
 import com.sevenstudio.track.entity.Tborder;
 
 @Controller
-@RequestMapping(value = "/manager")
+@RequestMapping(value = "/smanager")
 public class UserController {
 	@Autowired
 	OrderRepository orderRepository;
@@ -25,6 +25,7 @@ public class UserController {
 	@PostMapping("/save")
 	@ResponseBody
 	public Tborder updateOrder(@RequestParam("tbnumber") String tbnumber, @RequestParam("status") String status) {
+		System.out.println(status);
 		Tborder o = new Tborder();
 		o.setStatus(status);
 		o.setTbnumber(tbnumber);

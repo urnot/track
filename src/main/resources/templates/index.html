@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html mlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>小7海淘代购物流查询</title>
 <link
 	href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css"
 	rel="stylesheet">
-<link href="/tracking/css/index.css" rel="stylesheet">
+<link th:href="@{/css/index.css}" rel="stylesheet">
 </head>
 <body>
 	<!-- 	<div class="container">
@@ -23,27 +24,33 @@
 			<div class="col-md-12">
 				<div class="row">
 					<div class="col-md-12">
-						<h2 class="text-center">请复制在本店购物的淘宝订单号</h3>
-						<input id="ordernum" type="text" class="form-control"
-							placeholder="淘宝订单号" name="tracknum" />
+						<h2 class="text-center">
+							请复制在本店购物的淘宝订单号
+							</h3>
+							<input id="ordernum" type="text" class="form-control"
+								placeholder="淘宝订单号" name="tracknum" minlength="2" maxlength="18"
+								required />
 					</div>
 				</div>
-				<button type="button" class="btn btn-primary btn-block">查询
+				<button id="btn" type="button" class="btn btn-primary btn-block">查询
 				</button>
-				<span id="myDiv" class="badge badge-default"></span>
+					<span id="myDiv" class="badge badge-default"></span>
 			</div>
 		</div>
 	</div>
 
 
-	<!-- 	<div id="myDiv">
 	
-	</div> -->
 	<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
-	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="/tracking/js/order.js"></script>
+	<script
+		src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+
+	<script th:src="@{/js/order.js}"></script>
 	<!-- 包括所有已编译的插件 -->
 	<script
 		src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script
+		src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+
 </body>
 </html>
