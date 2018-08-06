@@ -1,6 +1,7 @@
 package com.sevenstudio.track.service.impl;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -51,5 +52,33 @@ public class OrderServiceImpl implements OrderService {
 		}
 		return JSON.toJSONString(map);
 	}
+
+	@Override
+	public List<Tborder> findAl() {
+		return orderRepository.findAll();
+	}
+
+	@Override
+	public boolean updateOrder(Tborder to) {
+		// TODO Auto-generated method stub
+		boolean result = false;
+		Tborder t = orderRepository.getByTbnumberIs(to.getTbnumber());
+		if (t == null) {
+			return result;
+		} else {
+			t.setStatus(to.getStatus());
+			t.setUpdatetime(to.getUpdatetime());
+			orderRepository.save(t);
+			result = true;
+		}
+		return result;
+	}
+
+	@Override
+	public void delOrder(String number) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

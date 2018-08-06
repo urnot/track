@@ -36,7 +36,7 @@ public class UserController {
 
 	@GetMapping("/index")
 	public String toManager() {
-		return "order";
+		return "manager";
 
 	}
 
