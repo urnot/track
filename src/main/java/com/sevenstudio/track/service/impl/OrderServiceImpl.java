@@ -54,24 +54,23 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public List<Tborder> findAl() {
+	public List<Tborder> findAll() {
 		return orderRepository.findAll();
 	}
 
 	@Override
-	public boolean updateOrder(Tborder to) {
+	public Tborder updateOrder(Tborder to) {
 		// TODO Auto-generated method stub
 		boolean result = false;
 		Tborder t = orderRepository.getByTbnumberIs(to.getTbnumber());
 		if (t == null) {
-			return result;
 		} else {
 			t.setStatus(to.getStatus());
 			t.setUpdatetime(to.getUpdatetime());
 			orderRepository.save(t);
 			result = true;
 		}
-		return result;
+		return t;
 	}
 
 	@Override
