@@ -9,9 +9,9 @@ public interface OrderService {
 
 	String trackDetail(String number);
 	
-	List<Tborder> findAl();
+	List<Tborder> findAll();
 	
-	boolean updateOrder(Tborder to);
+	Tborder updateOrder(Tborder to);
 	
 	void delOrder(String number);
 
